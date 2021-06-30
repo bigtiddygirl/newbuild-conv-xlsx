@@ -107,11 +107,11 @@ def converter():
             description.text = str(row[19])
 
         if row[20] == '':
-            aparts = ET.SubElement(offer, 'apartaments')
+            aparts = ET.SubElement(offer, 'apartments')
             aparts.text = '0'         
 
         else:
-            aparts = ET.SubElement(offer, 'apartaments')
+            aparts = ET.SubElement(offer, 'apartments')
             aparts.text = str(row[20]).strip()
 
         x += 1
