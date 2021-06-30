@@ -14,7 +14,7 @@ def converter():
     for row in sheet:
         offer = ET.SubElement(root, "offer")
         if row[0] == '':
-            offer.set("internal-id", str(row[7]) + str(row[5]).strip() + 'оффер'+ str(x))
+            offer.set("internal-id", str(row[7]) + ' ' + 'оффер '+ str(x))
         else:
             offer.set("internal-id", row[0])
 
@@ -107,7 +107,8 @@ def converter():
             description.text = str(row[19])
 
         if row[20] == '':
-            pass
+            aparts = ET.SubElement(offer, 'apartaments')
+            aparts.text = '0'         
 
         else:
             aparts = ET.SubElement(offer, 'apartaments')
